@@ -67,17 +67,20 @@ const Step1 = () => {
                                 containStyle={styles.gapInputs}
                                 error={errors.lastName}
                             />
-                            <DatePicker 
+                            <DatePicker
                                 error={typeof errors.date === 'string' ? errors.date : undefined}
                                 setFieldValue={setFieldValue}
                                 touched={!!touched.date}
                                 value={values.date}
                             />
-                            <Button
-                                text='Siguiente'
-                                onPress={submitForm}
-                            />
+                            <View style={{marginTop: 20}}>
+                                <Button
+                                    text='Siguiente'
+                                    onPress={submitForm}
+                                />
+                            </View>
                         </View>
+
 
                     )}
                 </Formik>

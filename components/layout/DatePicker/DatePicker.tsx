@@ -1,6 +1,6 @@
 import { ThemedText } from '@/components/ThemedText';
 import React, { useState } from 'react';
-import { Platform, StyleSheet, View } from 'react-native';
+import { Platform, StyleSheet, TouchableOpacity, View } from 'react-native';
 import Button from '../Button/Button';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import { FormikErrors } from 'formik';
@@ -16,7 +16,7 @@ interface IDatePickerProps{
 
 const DatePicker = ({error, touched, value, setFieldValue} : IDatePickerProps) => {
     const [showDatePicker, setShowDatePicker] = useState(false);
-    const { deviceLocale } = useConfiguration();
+    const { deviceLocale, colorObject } = useConfiguration();
 
     interface HandleDateChangeParams {
         event: any;
@@ -38,11 +38,17 @@ const DatePicker = ({error, touched, value, setFieldValue} : IDatePickerProps) =
         <View>
             <View style={styles.gapInputs}>
                 <ThemedText type='default' style={styles.label}>Fecha de nacimiento*</ThemedText>
-                <Button
+                <TouchableOpacity
+                    style={[styles.dateButton, {borderColor: colorObject.inputBorderColor}]}
+                    onPress={() => setShowDatePicker(true)}
+                    >
+                    <ThemedText style={[styles.textDate]}>{value.toLocaleDateString(deviceLocale)}</ThemedText>
+                </TouchableOpacity>
+                {/* <Button
                     text={value.toLocaleDateString(deviceLocale)}
                     onPress={() => setShowDatePicker(true)}
-                    style={styles.dateButton}
-                />
+                    style={[styles.dateButton]}
+                /> */}
                 {touched && error && (
                     <ThemedText type='default' style={styles.errorText}>
                         {error}
@@ -65,10 +71,15 @@ const DatePicker = ({error, touched, value, setFieldValue} : IDatePickerProps) =
 
 const styles = StyleSheet.create({
     dateButton: {
-        backgroundColor: '#f0f0f0',
-        borderWidth: 1,
-        borderColor: '#ccc',
-        paddingVertical: 12,
+        borderBottomWidth: 1,
+        borderRadius: 20,
+        paddingVertical: 6,
+    },
+    textDate:{
+        paddingHorizontal: 20,
+        fontSize: 14,
+        lineHeight: 20,
+        fontWeight: 400
     },
     label: {
         marginBottom: 8,
