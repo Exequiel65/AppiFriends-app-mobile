@@ -1,0 +1,12 @@
+{
+    "es": "Español",
+    "en": "Ingles",
+    "welcome": "¡Únete Ahora!",
+    "login": {
+        "title": "Iniciar sesión",
+        "button": "Iniciar sesión",
+        "description": "Haz conexiones reales sin presiones con personas que comparten tu estilo de vida. Encuentra tu tribu y vive nuevas experiencias.",
+        "googleSignIn": "Inicia sesión con Google",
+        "errors": {}
+    }
+}

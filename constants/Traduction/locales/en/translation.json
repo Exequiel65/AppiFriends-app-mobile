@@ -1,0 +1,12 @@
+{
+    "es": "Spanish",
+    "en": "English",
+    "welcome": "Join Now!",
+    "login": {
+        "title": "Login",
+        "button": "Login",
+        "description": "Make real connections without pressure with people who share your lifestyle. Find your tribe and live new experiences.",
+        "googleSignIn": "Sign in with Google",
+        "errors": {}
+    }
+}
