@@ -8,5 +8,11 @@
         "description": "Make real connections without pressure with people who share your lifestyle. Find your tribe and live new experiences.",
         "googleSignIn": "Sign in with Google",
         "errors": {}
+    },
+    "createAccount": {
+        "step1": {
+            "title": "Crea tu perfil",
+            "description": "Completa estos datos para personalizar tu experiencia y conectarte con personas afines a ti"
+        }
     }
 }

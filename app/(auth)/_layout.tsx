@@ -8,13 +8,18 @@ const AuthLayout = () => {
     console.log(User)
     useEffect(() => {
         if (User) {
-            console.log("User exists, redirecting to app");
-            router.replace('/(iapp)');
+            if (User.isCompleted) {
+                console.log("User exists, redirecting to app");
+                router.replace('/(iapp)');
+            }else{
+                router.replace('/(auth)/step1')
+            }
         }
     }, [User]);
     return (
         <Stack screenOptions={{headerShown: false}}>
             <Stack.Screen name='index'/>
+            <Stack.Screen name='step1' />
         </Stack>
     );
 }

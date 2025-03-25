@@ -14,7 +14,8 @@ const Index = () => {
         familyName: "Britos",
         givenName: "Marcos",
         id: "oaikjbaiu123",
-        photo: null
+        photo: null,
+        isCompleted: false
     } 
     return (
         <ThemedView style={[styles.container]}>

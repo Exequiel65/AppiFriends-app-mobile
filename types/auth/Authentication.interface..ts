@@ -12,5 +12,6 @@ interface IUser {
   photo: string | null;
   familyName: string | null;
   givenName: string | null;
+  isCompleted: boolean
 }
 
