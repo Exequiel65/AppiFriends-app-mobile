@@ -37,7 +37,7 @@ const DatePicker = ({error, touched, value, setFieldValue} : IDatePickerProps) =
     return (
         <View>
             <View style={styles.gapInputs}>
-                <ThemedText type='default' style={styles.label}>Fecha de nacimiento*</ThemedText>
+                <ThemedText type='label'>Fecha de nacimiento*</ThemedText>
                 <TouchableOpacity
                     style={[styles.dateButton, {borderColor: colorObject.inputBorderColor}]}
                     onPress={() => setShowDatePicker(true)}
